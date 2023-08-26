@@ -33,7 +33,7 @@ function Nav() {
                     <a class="nav-link" href="#">Pokémon Team Builder</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Guides</a>
+                    <a class="nav-link" href="#">Picachu</a>
                 </li>
               
                   <li class="nav-item">
