@@ -29,6 +29,9 @@ const client = new ApolloClient({
   cache: new InMemoryCache(),
 });
 
+// importing the css
+import './App.css'
+
 function App() {
   return (
     <ApolloProvider client={client}>

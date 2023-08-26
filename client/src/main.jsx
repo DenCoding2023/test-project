@@ -10,6 +10,7 @@ import Login from './pages/Login';
 import Signup from './pages/Signup';
 import Success from './pages/Success';
 import OrderHistory from './pages/OrderHistory';
+import Picachu from './pages/Picachu';
 
 const router = createBrowserRouter([
   {
@@ -29,7 +30,11 @@ const router = createBrowserRouter([
       }, {
         path: '/success',
         element: <Success />
-      }, {
+      },{
+        path: '/picachu',
+        element: <Picachu />
+      },
+       {
         path: '/orderHistory',
         element: <OrderHistory />
       }, {
