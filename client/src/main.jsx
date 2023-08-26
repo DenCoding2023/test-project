@@ -12,6 +12,7 @@ import Success from './pages/Success';
 import OrderHistory from './pages/OrderHistory';
 import Picachu from './pages/Picachu';
 import Teams from  './pages/Teams';
+import PokemonTeamB from './pages/PokemonTeamB';
 
 const router = createBrowserRouter([
   {
@@ -37,6 +38,9 @@ const router = createBrowserRouter([
       },{
         path: '/teams',
         element: <Teams />
+      }, {
+        path: '/pokemonTeamB',
+        element: <PokemonTeamB />
       },
        {
         path: '/orderHistory',

@@ -1,3 +1,5 @@
+{/* This is the navigation page */}
+
 import Auth from "../../utils/auth";
 import { Link } from "react-router-dom";
 
@@ -28,15 +30,19 @@ function Nav() {
             <ul class="navbar-nav">
             <li class="nav-item">
                <Link class="nav-link" to="/teams">
-                   Teams
+                   Create a Team
                 </Link>
               </li>
 
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Pokémon Team Builder</a>
+                <Link class="nav-link" to="/PokemonTeamB">
+                   Pokemon-Team-Page
+                </Link>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Picachu</a>
+                <Link class="nav-link" to="/picachu">
+                   Picachu
+                </Link>
                 </li>
               
                   <li class="nav-item">
