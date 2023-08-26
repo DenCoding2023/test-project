@@ -1,13 +1,13 @@
 import React, { useState } from 'react';
-import { Dropdown, ButtonGroup } from 'react-bootstrap';
+import { Dropdown, ButtonGroup, Button } from 'react-bootstrap'; // Import Dropdown, Button, and ButtonGroup from React Bootstrap
 
 const Teams = () => {
   // Arrays of Pokémon names
-  const pokemonNames1 = ["Pikachu", "Charizard", "Bulbasaur", "Squirtle", "Jigglypuff"];
-  const pokemonNames2 = ["Mewtwo", "Gengar", "Dragonite", "Vaporeon", "Snorlax"];
-  const pokemonNames3 = ["Machamp", "Lapras", "Arcanine", "Mew", "Alakazam"];
-  const pokemonNames4 = ["Gyarados", "Golem", "Aerodactyl", "Kabutops", "Omastar"];
-  const pokemonNames5 = ["Eevee", "Pidgeot", "Nidoking", "Moltres", "Zapdos"];
+  const pokemonNames1 = ["", "Pikachu", "Charizard", "Bulbasaur", "Squirtle", "Jigglypuff"];
+  const pokemonNames2 = ["", "Mewtwo", "Gengar", "Dragonite", "Vaporeon", "Snorlax"];
+  const pokemonNames3 = ["", "Machamp", "Lapras", "Arcanine", "Mew", "Alakazam"];
+  const pokemonNames4 = ["", "Gyarados", "Golem", "Aerodactyl", "Kabutops", "Omastar"];
+  const pokemonNames5 = ["", "Eevee", "Pidgeot", "Nidoking", "Moltres", "Zapdos"];
 
   // States to store the selected Pokémon for each menu
   const [selectedPokemon1, setSelectedPokemon1] = useState('');
@@ -39,13 +39,22 @@ const Teams = () => {
     }
   };
 
+  // Function to reset all Pokémon selections
+  const handleReset = () => {
+    setSelectedPokemon1('');
+    setSelectedPokemon2('');
+    setSelectedPokemon3('');
+    setSelectedPokemon4('');
+    setSelectedPokemon5('');
+  };
+
   return (
     <div className="container">
       <div className="row">
         <div className="col-md-6">
-            <h1>Adding Contenxt Here</h1>
+            <h1>We can add context here</h1>
           <div className="card mb-4">
-            <h2>WE can add images</h2>
+            <h1>Or add images - tell me what to add</h1>
             {/* Existing card content */}
           </div>
         </div>
@@ -53,6 +62,7 @@ const Teams = () => {
         <div className="col-md-6">
           <div className="container mt-4">
             <div className="mb-3">
+              {/* Dropdown 1 */}
               <Dropdown as={ButtonGroup}>
                 <Dropdown.Toggle variant="primary" id="dropdown-basic1">
                   {selectedPokemon1 || 'Select a Pokémon 1'}
@@ -64,7 +74,7 @@ const Teams = () => {
                       key={index}
                       onClick={() => handleDropdownSelect(name, 1)}
                     >
-                      {name}
+                      {name || 'Empty Selection'}
                     </Dropdown.Item>
                   ))}
                 </Dropdown.Menu>
@@ -95,7 +105,7 @@ const Teams = () => {
                       key={index}
                       onClick={() => handleDropdownSelect(name, 2)}
                     >
-                      {name}
+                      {name || 'Empty Selection'}
                     </Dropdown.Item>
                   ))}
                 </Dropdown.Menu>
@@ -126,7 +136,7 @@ const Teams = () => {
                       key={index}
                       onClick={() => handleDropdownSelect(name, 3)}
                     >
-                      {name}
+                      {name || 'Empty Selection'}
                     </Dropdown.Item>
                   ))}
                 </Dropdown.Menu>
@@ -157,7 +167,7 @@ const Teams = () => {
                       key={index}
                       onClick={() => handleDropdownSelect(name, 4)}
                     >
-                      {name}
+                      {name || 'Empty Selection'}
                     </Dropdown.Item>
                   ))}
                 </Dropdown.Menu>
@@ -188,7 +198,7 @@ const Teams = () => {
                       key={index}
                       onClick={() => handleDropdownSelect(name, 5)}
                     >
-                      {name}
+                      {name || 'Empty Selection'}
                     </Dropdown.Item>
                   ))}
                 </Dropdown.Menu>
@@ -202,6 +212,13 @@ const Teams = () => {
                   </div>
                 </div>
               )}
+            </div>
+            
+            {/* Reset button */}
+            <div className="text-center">
+              <Button variant="danger" onClick={handleReset}>
+                Reset
+              </Button>
             </div>
           </div>
         </div>
