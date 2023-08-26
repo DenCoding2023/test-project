@@ -7,12 +7,14 @@ const Teams = () => {
   const pokemonNames2 = ["Mewtwo", "Gengar", "Dragonite", "Vaporeon", "Snorlax"];
   const pokemonNames3 = ["Machamp", "Lapras", "Arcanine", "Mew", "Alakazam"];
   const pokemonNames4 = ["Gyarados", "Golem", "Aerodactyl", "Kabutops", "Omastar"];
+  const pokemonNames5 = ["Eevee", "Pidgeot", "Nidoking", "Moltres", "Zapdos"];
 
   // States to store the selected Pokémon for each menu
   const [selectedPokemon1, setSelectedPokemon1] = useState('');
   const [selectedPokemon2, setSelectedPokemon2] = useState('');
   const [selectedPokemon3, setSelectedPokemon3] = useState('');
   const [selectedPokemon4, setSelectedPokemon4] = useState('');
+  const [selectedPokemon5, setSelectedPokemon5] = useState('');
 
   // Function to handle dropdown selection for each menu
   const handleDropdownSelect = (name, menuNumber) => {
@@ -29,6 +31,9 @@ const Teams = () => {
       case 4:
         setSelectedPokemon4(name);
         break;
+      case 5:
+        setSelectedPokemon5(name);
+        break;
       default:
         break;
     }
@@ -38,88 +43,166 @@ const Teams = () => {
     <div className="container">
       <div className="row">
         <div className="col-md-6">
+            <h1>Adding Contenxt Here</h1>
           <div className="card mb-4">
+            <h2>WE can add images</h2>
             {/* Existing card content */}
           </div>
         </div>
 
         <div className="col-md-6">
           <div className="container mt-4">
-            <Dropdown as={ButtonGroup} className="mb-3">
-              <Dropdown.Toggle variant="primary" id="dropdown-basic1">
-                {selectedPokemon1 || 'Select a Pokémon 1'}
-              </Dropdown.Toggle>
+            <div className="mb-3">
+              <Dropdown as={ButtonGroup}>
+                <Dropdown.Toggle variant="primary" id="dropdown-basic1">
+                  {selectedPokemon1 || 'Select a Pokémon 1'}
+                </Dropdown.Toggle>
 
-              <Dropdown.Menu>
-                {pokemonNames1.map((name, index) => (
-                  <Dropdown.Item
-                    key={index}
-                    onClick={() => handleDropdownSelect(name, 1)}
-                  >
-                    {name}
-                  </Dropdown.Item>
-                ))}
-                <Dropdown.Divider /> {/* Divider */}
-                <Dropdown.Item disabled>Empty Section</Dropdown.Item> {/* Empty Section */}
-              </Dropdown.Menu>
-            </Dropdown>
+                <Dropdown.Menu>
+                  {pokemonNames1.map((name, index) => (
+                    <Dropdown.Item
+                      key={index}
+                      onClick={() => handleDropdownSelect(name, 1)}
+                    >
+                      {name}
+                    </Dropdown.Item>
+                  ))}
+                </Dropdown.Menu>
+              </Dropdown>
+              {selectedPokemon1 && (
+                <div className="card">
+                  <img src={`/images/${selectedPokemon1.toLowerCase()}.jpg`} className="card-img-top" alt={selectedPokemon1} />
+                  <div className="card-body">
+                    <h2 className="card-title">{selectedPokemon1}</h2>
+                    {/* Add more information about the selected Pokémon if needed */}
+                  </div>
+                </div>
+              )}
+            </div>
 
-            <Dropdown as={ButtonGroup} className="mb-3">
-              <Dropdown.Toggle variant="primary" id="dropdown-basic2">
-                {selectedPokemon2 || 'Select a Pokémon 2'}
-              </Dropdown.Toggle>
+            {/* Add similar sections for other dropdown menus */}
+            
+            {/* Dropdown 2 */}
+            <div className="mb-3">
+              <Dropdown as={ButtonGroup}>
+                <Dropdown.Toggle variant="primary" id="dropdown-basic2">
+                  {selectedPokemon2 || 'Select a Pokémon 2'}
+                </Dropdown.Toggle>
 
-              <Dropdown.Menu>
-                {pokemonNames2.map((name, index) => (
-                  <Dropdown.Item
-                    key={index}
-                    onClick={() => handleDropdownSelect(name, 2)}
-                  >
-                    {name}
-                  </Dropdown.Item>
-                ))}
-                <Dropdown.Divider /> {/* Divider */}
-                <Dropdown.Item disabled>Empty Section</Dropdown.Item> {/* Empty Section */}
-              </Dropdown.Menu>
-            </Dropdown>
+                <Dropdown.Menu>
+                  {pokemonNames2.map((name, index) => (
+                    <Dropdown.Item
+                      key={index}
+                      onClick={() => handleDropdownSelect(name, 2)}
+                    >
+                      {name}
+                    </Dropdown.Item>
+                  ))}
+                </Dropdown.Menu>
+              </Dropdown>
+              {selectedPokemon2 && (
+                <div className="card">
+                  <img src={`/images/${selectedPokemon2.toLowerCase()}.jpg`} className="card-img-top" alt={selectedPokemon2} />
+                  <div className="card-body">
+                    <h2 className="card-title">{selectedPokemon2}</h2>
+                    {/* Add more information about the selected Pokémon if needed */}
+                  </div>
+                </div>
+              )}
+            </div>
+            
+            {/* Add similar sections for other dropdown menus */}
+            
+            {/* Dropdown 3 */}
+            <div className="mb-3">
+              <Dropdown as={ButtonGroup}>
+                <Dropdown.Toggle variant="primary" id="dropdown-basic3">
+                  {selectedPokemon3 || 'Select a Pokémon 3'}
+                </Dropdown.Toggle>
 
-            <Dropdown as={ButtonGroup} className="mb-3">
-              <Dropdown.Toggle variant="primary" id="dropdown-basic3">
-                {selectedPokemon3 || 'Select a Pokémon 3'}
-              </Dropdown.Toggle>
+                <Dropdown.Menu>
+                  {pokemonNames3.map((name, index) => (
+                    <Dropdown.Item
+                      key={index}
+                      onClick={() => handleDropdownSelect(name, 3)}
+                    >
+                      {name}
+                    </Dropdown.Item>
+                  ))}
+                </Dropdown.Menu>
+              </Dropdown>
+              {selectedPokemon3 && (
+                <div className="card">
+                  <img src={`/images/${selectedPokemon3.toLowerCase()}.jpg`} className="card-img-top" alt={selectedPokemon3} />
+                  <div className="card-body">
+                    <h2 className="card-title">{selectedPokemon3}</h2>
+                    {/* Add more information about the selected Pokémon if needed */}
+                  </div>
+                </div>
+              )}
+            </div>
+            
+            {/* Add similar sections for other dropdown menus */}
+            
+            {/* Dropdown 4 */}
+            <div className="mb-3">
+              <Dropdown as={ButtonGroup}>
+                <Dropdown.Toggle variant="primary" id="dropdown-basic4">
+                  {selectedPokemon4 || 'Select a Pokémon 4'}
+                </Dropdown.Toggle>
 
-              <Dropdown.Menu>
-                {pokemonNames3.map((name, index) => (
-                  <Dropdown.Item
-                    key={index}
-                    onClick={() => handleDropdownSelect(name, 3)}
-                  >
-                    {name}
-                  </Dropdown.Item>
-                ))}
-                <Dropdown.Divider /> {/* Divider */}
-                <Dropdown.Item disabled>Empty Section</Dropdown.Item> {/* Empty Section */}
-              </Dropdown.Menu>
-            </Dropdown>
+                <Dropdown.Menu>
+                  {pokemonNames4.map((name, index) => (
+                    <Dropdown.Item
+                      key={index}
+                      onClick={() => handleDropdownSelect(name, 4)}
+                    >
+                      {name}
+                    </Dropdown.Item>
+                  ))}
+                </Dropdown.Menu>
+              </Dropdown>
+              {selectedPokemon4 && (
+                <div className="card">
+                  <img src={`/images/${selectedPokemon4.toLowerCase()}.jpg`} className="card-img-top" alt={selectedPokemon4} />
+                  <div className="card-body">
+                    <h2 className="card-title">{selectedPokemon4}</h2>
+                    {/* Add more information about the selected Pokémon if needed */}
+                  </div>
+                </div>
+              )}
+            </div>
+            
+            {/* Add similar sections for other dropdown menus */}
+            
+            {/* Dropdown 5 */}
+            <div className="mb-3">
+              <Dropdown as={ButtonGroup}>
+                <Dropdown.Toggle variant="primary" id="dropdown-basic5">
+                  {selectedPokemon5 || 'Select a Pokémon 5'}
+                </Dropdown.Toggle>
 
-            <Dropdown as={ButtonGroup} className="mb-3">
-              <Dropdown.Toggle variant="primary" id="dropdown-basic4">
-                {selectedPokemon4 || 'Select a Pokémon 4'}
-              </Dropdown.Toggle>
-
-              <Dropdown.Menu>
-                {pokemonNames4.map((name, index) => (
-                  <Dropdown.Item
-                    key={index}
-                    onClick={() => handleDropdownSelect(name, 4)}
-                  >
-                    {name}
-                  </Dropdown.Item>
-                ))}
-                <Dropdown.Divider /> {/* Divider */}
-                <Dropdown.Item disabled>Empty Section</Dropdown.Item> {/* Empty Section */}
-              </Dropdown.Menu>
-            </Dropdown>
+                <Dropdown.Menu>
+                  {pokemonNames5.map((name, index) => (
+                    <Dropdown.Item
+                      key={index}
+                      onClick={() => handleDropdownSelect(name, 5)}
+                    >
+                      {name}
+                    </Dropdown.Item>
+                  ))}
+                </Dropdown.Menu>
+              </Dropdown>
+              {selectedPokemon5 && (
+                <div className="card">
+                  <img src={`/images/${selectedPokemon5.toLowerCase()}.jpg`} className="card-img-top" alt={selectedPokemon5} />
+                  <div className="card-body">
+                    <h2 className="card-title">{selectedPokemon5}</h2>
+                    {/* Add more information about the selected Pokémon if needed */}
+                  </div>
+                </div>
+              )}
+            </div>
           </div>
         </div>
       </div>
