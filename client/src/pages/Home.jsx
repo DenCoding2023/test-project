@@ -6,8 +6,8 @@ const Home = () => {
   return (
     <div className="container">
       <CategoryMenu />
-      {/* <ProductList />
-      <Cart /> */}
+      {/* <ProductList /> */}
+      <Cart />
     </div>
   );
 };

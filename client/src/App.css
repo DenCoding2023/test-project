@@ -19,11 +19,21 @@
 
 /* Custom CSS for the background image */
 .jumbotron {
-  background-image: url('./images/main-pokemon.jpg'); /* Replace 'your-image-url.jpg' with the actual image URL */
-  background-size: cover;
+  background-image: url('./images/background2.jpg'); /* Replace 'your-image-url.jpg' with the actual image URL */
+  background-size: contain;
   background-position: center;
-  height: 650px;
+  height: 558px;
   width: auto;
   color: #fff; /* Text color for better visibility */
-  padding: 20px; /* Adjust padding as needed */
+  padding: 51px; /* Adjust padding as needed */
+}
+
+
+.navbar{
+height: 85px;
+}
+
+/* Login Section colors and buttons */
+.container.container.my-1{
+    background-color: aliceblue;
 }
